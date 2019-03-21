@@ -4,6 +4,7 @@ if you are here to waste your time, then you are at the right place...
 
 I'm presenting to you.....
 
+"""
                              _____                  _   
      /\                     / ____|                | |  
     /  \   __ _ _   _  __ _| |     _ __ _   _ _ __ | |_ 
@@ -13,6 +14,7 @@ I'm presenting to you.....
              | |                         __/ | |        
              |_|                        |___/|_|
 
+"""
 
 AquaCrypt v0.01 , an encryption/decryption tool using image and passphrase. The idea of the name AquaCrypt is because a goddess named Aqua who is useless in everything she does.
 
