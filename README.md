@@ -15,17 +15,14 @@ I'm presenting to you.....
 				
 
 
-AquaCrypt v0.01 , an encryption/decryption tool using image and passphrase. The idea of the name AquaCrypt is because a goddess named Aqua who is useless in everything she does.
+AquaCrypt v0.01 , is an encryption/decryption tool using image and passphrase. The idea of the name AquaCrypt is because of a goddess named Aqua (https://konosuba.fandom.com/wiki/Aqua) in the anime "Kono Subarashii Sekai ni Shukufuku wo! " who is useless in everything.
 
 This is a mere useless tool because;
-- it takes time to decrypt and encrypt, you need to wait at least 1 minute for the process to finish
+- it takes time to decrypt and encrypt, you need to wait at least 1 minute for the process to finish, i'll optimize them later
 - sometimes it works, sometimes it won't work.. idk why, I'll check em later
-- this script can only encrypt text file for now.. well, you can use other available encryption tools which are more powerful and fast than AquaCrypt, so basically
-AquaCrypt is useless.
+- this script can only encrypt text file for now.. well, you can use other available encryption tools which are more powerful and fast than AquaCrypt, so basically AquaCrypt is useless.
 
 I'm creating AquaCrypt because I think there aren't enough useless encryption tools in the world right now.
-
-- yunaranyancat
 
 Changelogs
 
