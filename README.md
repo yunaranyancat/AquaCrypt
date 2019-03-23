@@ -6,13 +6,13 @@ I'm presenting to you.....
 
 				                             _____                  _   
 				     /\                     / ____|                | |  
-				    /  \   __ _ _   _  __ _| |     _ __ _   _ _ __ | |_ 
+				    /  \   __ _ _   _  __ _| |     _ __ _   _ _ __ | |_
 				   / /\ \ / _` | | | |/ _` | |    | '__| | | | '_ \| __|
-				  / ____ \ (_| | |_| | (_| | |____| |  | |_| | |_) | |_ 
+				  / ____ \ (_| | |_| | (_| | |____| |  | |_| | |_) | |_
 				 /_/    \_\__, |\__,_|\__,_|\_____|_|   \__, | .__/ \__|
 				             | |                         __/ | |        
 				             |_|                        |___/|_|
-				
+
 
 
 AquaCrypt v0.01 , is an encryption/decryption tool using image and passphrase. The idea of the name AquaCrypt is because of a goddess named Aqua (https://konosuba.fandom.com/wiki/Aqua) in the anime "Kono Subarashii Sekai ni Shukufuku wo! " who is useless in everything.
@@ -27,3 +27,5 @@ I'm creating AquaCrypt because I think there aren't enough useless encryption to
 Changelogs
 
 v0.01 - I just created the tool today, so I didn't focus much on putting the codes in proper methods/functions/class. I'll do it later.. :3
+
+v0.02 - AquaCrypt.py. Just realised the decryption only need passphrase and IV. LOL. Need some work to be done there.
