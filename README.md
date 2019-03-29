@@ -15,7 +15,7 @@ I'm presenting to you.....
 
 
 
-AquaCrypt v0.01 , is an encryption/decryption tool using image and passphrase. The idea of the name AquaCrypt is because of a goddess named Aqua (https://konosuba.fandom.com/wiki/Aqua) in the anime "Kono Subarashii Sekai ni Shukufuku wo! " who is useless in everything.
+AquaCrypt [see latest version number], is an encryption/decryption tool using image and passphrase. The idea of the name AquaCrypt is because of a goddess named Aqua (https://konosuba.fandom.com/wiki/Aqua) in the anime "Kono Subarashii Sekai ni Shukufuku wo! " who is useless in everything.
 
 This is a mere useless tool because;
 - it takes time to decrypt and encrypt, you need to wait at least 1 minute for the process to finish, i'll optimize them later
@@ -29,3 +29,5 @@ Changelogs
 v0.01 - I just created the tool today, so I didn't focus much on putting the codes in proper methods/functions/class. I'll do it later.. :3
 
 v0.02 - AquaCrypt.py. Just realised the decryption only need passphrase and IV. LOL. Need some work to be done there.
+
+v0.03 - aquaencrypt.py + aquadecrypt.py - encryption and decryption using image and passphrase is now working. But the algorithm is too simple and not efficient.
