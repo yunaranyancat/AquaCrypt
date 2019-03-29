@@ -1,4 +1,4 @@
-import base64, random, struct, os
+import base64, random, struct, os, hashlib
 from PIL import Image
 from Crypto.Cipher import AES
 from pbkdf2 import PBKDF2
@@ -20,7 +20,7 @@ for i in pix_val:
 	tup_to_list = list(i)
 	newlist = tup_to_list[:-1]
 	list_img += newlist
-	print(newlist)
+	#print(newlist)
 
 print(len(list_img))
 
@@ -28,21 +28,24 @@ new_list = []
 for elem in list_img:
 	new_list.append((elem+9)//10*10)
 
-print(new_list)
+#print(new_list)
 
 new_pass  = ""
 
-print(type(encoded_passphrase))
+#print(type(encoded_passphrase))
 
 for val in encoded_passphrase:
-	print(new_list[ord(val)])
+	#print(new_list[ord(val)])
 	new_pass += str(new_list[ord(val)])
 
 print(new_pass)
 
-iv = b'r^O\xbf\xe1j\xac\xdf9^\x1c\xed\xab]\xdf\xc2'
-key = PBKDF2(passphrase,new_pass).read(16)
+#iv = b'r^O\xbf\xe1j\xac\xdf9^\x1c\xed\xab]\xdf\xc2'
 
+iv = ((hashlib.md5(passphrase.encode('utf-8')).hexdigest())[:16]).encode('utf-8')
+print("IV : ", iv)
+key = PBKDF2(passphrase,new_pass).read(16)
+print("Key : ",key)
 
 with open("encrypted.txt", 'rb') as infile:
 		origsize = struct.unpack('<Q', infile.read(struct.calcsize('Q')))[0]

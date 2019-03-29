@@ -1,4 +1,4 @@
-import base64, random, struct, os
+import base64, random, struct, os, hashlib
 from PIL import Image
 from Crypto.Cipher import AES
 from pbkdf2 import PBKDF2
@@ -21,7 +21,7 @@ for i in pix_val:
 	tup_to_list = list(i)
 	newlist = tup_to_list[:-1]
 	list_img += newlist
-	print(tup_to_list)
+	#print(tup_to_list)
 
 print(len(list_img))
 
@@ -29,19 +29,22 @@ new_list = []
 for elem in list_img:
 	new_list.append((elem+9)//10*10)
 
-print(new_list)
+#print(new_list)
 
 new_pass  = ""
 
 print(type(encoded_passphrase))
 
 for val in encoded_passphrase:
-	print(new_list[ord(val)])
+	#print(new_list[ord(val)])
 	new_pass += str(new_list[ord(val)])
 
 print(new_pass)
 
-iv = os.urandom(16)
+#iv = os.urandom(16)
+# IDEA 1 : Use IV based on MD5 of passphrase and take the first 16 lettes
+iv = ((hashlib.md5(passphrase.encode('utf-8')).hexdigest())[:16]).encode('utf-8')
+
 print("IV : ",iv)
 key = PBKDF2(passphrase,new_pass).read(16)
 print("key :",key)

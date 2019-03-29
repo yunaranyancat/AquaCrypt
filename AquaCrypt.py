@@ -28,7 +28,7 @@ def process_image(image="aqua.png",passphrase="useless",salt="nosaltpls"):
     	print(tup_to_list)
 
 
-        print(len(list_img))
+    print(len(list_img))
 
     new_list = []
     for elem in list_img:
@@ -72,14 +72,36 @@ def encrypt(file_to_encrypt,image="aqua.png",passphrase="useless",salt="nosaltpl
 
 # NOTICE : NEED TO USE IMAGE TO DECRYPT!! BELOW CODE IS NOT COMPLETE
 # idea : extract some value in the image to forge the IV (convert int to hex?)
-def decrypt(iv,key): # should be def decrypt(iv,key,image): or something like that
-    iv = b'r^O\xbf\xe1j\xac\xdf9^\x1c\xed\xab]\xdf\xc2'
+def decrypt(key,image="aqua.png",passphrase="useless"): # should be def decrypt(iv,key,image): or something like that
     key = PBKDF2(passphrase,new_pass).read(16)
+
+    # myfile = "aqua.png"
+    # passphrase = "useless"
+    file_to_encrypt = "encryptme"
+    salt = "nosaltpls"
+    encoded_passphrase = (str((base64.b64encode(bytes(passphrase, 'utf-8')))).split("'"))[1]
+    im = Image.open(myfile,'r')
+    pix_val = list(im.getdata())
+
+    print("Image name : "+myfile)
+    print("passphrase : "+passphrase)
+    print("encoded passphrase : "+ encoded_passphrase)
+
+    list_img = []
+    for i in pix_val:
+    	newlist = []
+    	tup_to_list = list(i)
+    	newlist = tup_to_list[:-1]
+    	list_img += newlist
+    	#print(tup_to_list)
+
+    # iv = b'r^O\xbf\xe1j\xac\xdf9^\x1c\xed\xab]\xdf\xc2'
+    iv = ((hashlib.md5(passphrase.encode('utf-8')).hexdigest())[:16]).encode('utf-8')
 
 
     with open("encrypted.txt", 'rb') as infile:
     		origsize = struct.unpack('<Q', infile.read(struct.calcsize('Q')))[0]
-    		iv = infile.read(16)
+    		# iv = infile.read(16)
     		decipher = AES.new(key, AES.MODE_CBC, iv)
 
     		with open("decrypted.txt", 'wb') as outfile:
